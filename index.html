@@ -1,29 +1,191 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Adeel Farooq | Bioinformatics</title>
-    <style>
-      body {font-family: system-ui, -apple-system, Arial, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6;}
-      h1 {margin-bottom: 0}
-      nav a {margin-right: 12px;}
-    </style>
-  </head>
-  <body>
-    <h1>Adeel Farooq</h1>
-    <p>Postdoctoral Fellow · Microbial Genomics & Bioinformatics</p>
-    <nav>
-      <a href="/">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <hr>
-    <h2 id="projects">Projects</h2>
-    <ul>
-      <li><strong>PlasmidFlow</strong> – Interactive visualization of plasmid-driven traits.</li>
-    </ul>
-    <h2 id="contact">Contact</h2>
-    <p>Email: afaroo04@uoguelph.ca</p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adeel Farooq | Microbial Genomics & Bioinformatics</title>
+  <meta name="description" content="Adeel Farooq — Postdoctoral fellow in microbial genomics & bioinformatics. Research portfolio, publications, software, teaching, and CV." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;--card:#121a33;--muted:#7aa0ff;--text:#eaf1ff;--sub:#b8c7ff;--accent:#68f6c5;--accent2:#7aa0ff;--ring:#68f6c5;--shadow:0 10px 30px rgba(0,0,0,.4)
+    }
+    :root.light{
+      --bg:#f6f9ff;--card:#ffffff;--muted:#2752ff;--text:#0d1b2a;--sub:#33415c;--accent:#0fd19a;--accent2:#2752ff;--ring:#0fd19a;--shadow:0 10px 20px rgba(2,18,53,.08)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{position:sticky;top:0;z-index:99;backdrop-filter:blur(12px);background:linear-gradient(90deg,rgba(11,16,32,.8),rgba(11,16,32,.35))}
+    .light .nav{background:rgba(255,255,255,.7)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 180deg, #00ffd0, #0066ff, #8b5cf6, #00ffd0);box-shadow:var(--shadow)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:.4px}
+    .nav a{margin:0 10px;font-weight:600}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.1));box-shadow:var(--shadow)}
+    .light .btn{border-color:#e6eefc;background:#fff}
+    .hero{position:relative;overflow:hidden;border-radius:20px;margin:24px auto;padding:48px;background:radial-gradient(1200px 400px at 20% -10%,rgba(122,160,255,.35),transparent),radial-gradient(800px 400px at 100% 10%,rgba(104,246,197,.22),transparent),linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:var(--shadow)}
+    .light .hero{background:radial-gradient(1200px 400px at 20% -10%,#e7efff,transparent),radial-gradient(800px 400px at 100% 10%,#e6fff6,transparent),#fff}
+    .hero h2{font-size:40px;margin:0 0 10px 0;line-height:1.15}
+    .hero p{margin:0 0 14px 0;color:var(--sub)}
+    .hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-weight:600}
+    .light .chip{background:#f2f6ff;border:1px solid #e8eefc}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin:28px 0}
+    .card{grid-column:span 12;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    .light .card{background:#fff;border-color:#ebf1ff}
+    @media(min-width:900px){.card.span-6{grid-column:span 6}.card.span-4{grid-column:span 4}}
+    h3{margin:0 0 10px 0;font-size:20px}
+    .list{display:grid;gap:14px}
+    .item{padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12)}
+    .light .item{background:#f9fbff;border-color:#e5eeff}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(104,246,197,.15);border:1px solid rgba(104,246,197,.4);color:var(--text);font-size:12px;font-weight:700;margin-left:8px}
+    .pub{display:flex;flex-direction:column;gap:6px}
+    .footer{opacity:.8;padding:30px 0;text-align:center}
+    .download{display:inline-flex;gap:10px;align-items:center}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(122,160,255,.15);border:1px solid rgba(122,160,255,.35);font-weight:700}
+    .light .pill{background:#eef4ff;border-color:#dbe6ff}
+    .kbd{padding:2px 6px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05)}
+    .light .kbd{border-color:#e5e9f6;background:#f6f9ff}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Adeel Farooq</h1>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Software</a>
+        <a href="#pubs">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+        <button id="mode" class="btn" title="Toggle light/dark">🌓 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="about">
+      <h2>Microbial Genomics & Bioinformatics</h2>
+      <p>Postdoctoral Fellow, University of Guelph · Plasmids · AMR · Network analytics · Interactive visualization</p>
+      <div class="chips">
+        <span class="chip">PlasmidFlow <span class="tag">new</span></span>
+        <span class="chip">Sankey & Network Graphs</span>
+        <span class="chip">Reproducible workflows</span>
+        <a class="btn download" href="assets/Adeel_Farooq_CV.pdf" download>
+          📄 Download CV
+        </a>
+      </div>
+    </section>
+
+    <section class="grid" id="projects">
+      <article class="card span-6">
+        <h3>Featured Software</h3>
+        <div class="list">
+          <div class="item">
+            <strong>PlasmidFlow</strong> — Web platform for interactive visualization of plasmid-driven traits (Sankey, trait heatmaps, shared networks). <a href="https://plasmidflow.metabopotential.site" target="_blank" rel="noopener">Live demo</a> · <a href="#">Repo</a>
+          </div>
+          <div class="item">
+            <strong>ARG-Tracker</strong> — Pipeline for AMR gene curation and environment-specific prevalence dashboards. <span class="pill">Python</span>
+          </div>
+          <div class="item">
+            <strong>GenomeWeave</strong> — Graph-based comparative genomics toolkit (orthology nets & mobile elements). <span class="pill">NetworkX</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card span-6">
+        <h3>Research Highlights</h3>
+        <ul class="list">
+          <li class="item">Quantified cross-environment plasmid sharing using bipartite projections and community detection.</li>
+          <li class="item">Built trait heatmap system with session-preserving styling for publication-ready export (SVG/PDF/PNG).</li>
+          <li class="item">Deployed lightweight, portable architecture: Flask + Plotly + SQLite with optional PostgreSQL scaling.</li>
+        </ul>
+      </article>
+
+      <article class="card span-4">
+        <h3>Education</h3>
+        <div class="list">
+          <div class="item"><strong>Ph.D.</strong> — Microbial Genomics / Bioinformatics</div>
+          <div class="item"><strong>M.Sc.</strong> — Biotechnology</div>
+          <div class="item"><strong>B.Sc.</strong> — Microbiology</div>
+        </div>
+      </article>
+
+      <article class="card span-4" id="pubs">
+        <h3>Selected Publications</h3>
+        <div class="list pub">
+          <div class="item">Frost LS, Leplae R, Summers AO, Toussaint A. Mobile genetic elements: agents of open source evolution. <em>Nat Rev Microbiol</em>, 2005.</div>
+          <div class="item">Smillie C, Garcillán-Barcia MP, Francia MV, Rocha EPC, de la Cruz F. Mobility of plasmids. <em>MMBR</em>, 2010.</div>
+          <div class="item">Arredondo-Alonso S, et al. Reconstructing plasmids from short reads. <em>Microbial Genomics</em>, 2020.</div>
+          <div class="item"><a href="#">Full bibliography →</a></div>
+        </div>
+      </article>
+
+      <article class="card span-4" id="teaching">
+        <h3>Teaching & Mentoring</h3>
+        <ul class="list">
+          <li class="item">Guest lectures: AMR genomics, HGT networks, reproducible visualization.</li>
+          <li class="item">Mentored students on data wrangling, FAIR principles, and figure design.</li>
+        </ul>
+      </article>
+
+      <article class="card span-6" id="contact">
+        <h3>Contact</h3>
+        <div class="list">
+          <div class="item">📧 <a href="mailto:afaroo04@uoguelph.ca">afaroo04@uoguelph.ca</a></div>
+          <div class="item">🐙 GitHub: <a href="https://github.com/adeelfarooq-bioinfo" target="_blank" rel="noopener">@adeelfarooq-bioinfo</a></div>
+          <div class="item">🔗 ORCID: <a href="#" target="_blank" rel="noopener">0000-0000-0000-0000</a></div>
+          <div class="item">🔗 Google Scholar: <a href="#" target="_blank" rel="noopener">Scholar profile</a></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h3>How to deploy on GitHub Pages</h3>
+      <ol>
+        <li>Create a public repo named <code>adeelfarooq-bioinfo.github.io</code>.</li>
+        <li>Put this <code>index.html</code> file in the root of the repo.</li>
+        <li>Go to <strong>Settings → Pages</strong> and set Source to <em>Deploy from a branch</em>, branch <em>main</em>.</li>
+        <li>Wait ~2 minutes, then visit <code>https://adeelfarooq-bioinfo.github.io</code>.</li>
+      </ol>
+    </section>
+
+    <footer class="footer">© <span id="y"></span> Adeel Farooq · Built with GitHub Pages</footer>
+  </main>
+
+  <script>
+    // theme toggle
+    const root=document.documentElement;
+    const modeBtn=document.getElementById('mode');
+    const setMode=(m)=>{m==='light'?root.classList.add('light'):root.classList.remove('light');localStorage.setItem('mode',m)};
+    setMode(localStorage.getItem('mode')||'dark');
+    modeBtn.addEventListener('click',()=>{const m=root.classList.contains('light')?'dark':'light';setMode(m)});
+    document.getElementById('y').textContent=new Date().getFullYear();
+  </script>
+
+  <!-- JSON-LD for a clean academic card in search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adeel Farooq",
+    "jobTitle": "Postdoctoral Fellow (Microbial Genomics & Bioinformatics)",
+    "affiliation": {"@type": "Organization","name": "University of Guelph"},
+    "email": "mailto:afaroo04@uoguelph.ca",
+    "url": "https://adeelfarooq-bioinfo.github.io",
+    "sameAs": [
+      "https://github.com/adeelfarooq-bioinfo"
+    ]
+  }
+  </script>
+</body>
 </html>
