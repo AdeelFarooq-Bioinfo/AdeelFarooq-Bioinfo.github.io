@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adeel Farooq | Microbial Genomics & Bioinformatics</title>
+  <meta name="description" content="Adeel Farooq — Postdoctoral researcher in microbial genomics & bioinformatics. Research interests, publications, software, teaching, and CV." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Light theme only */
+    :root{
+      --bg:#f6f9ff; --bg2:#deebff; --card:#ffffff; --text:#0d1b2a; --sub:#33415c;
+      --accent:#0fd19a; --accent2:#2752ff; --ring:#0fd19a; --shadow:0 10px 22px rgba(2,18,53,.09);
+      --border:#e8eefc;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(120deg,var(--bg),var(--bg2));color:var(--text)}
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1080px;margin:0 auto;padding:22px}
+
+    /* Light nav baked in */
+    .nav{
+      position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+      background:rgba(255,255,255,.7);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 18px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 180deg,#00ffd0,#0066ff,#8b5cf6,#00ffd0);box-shadow:var(--shadow)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:.4px}
+    .nav a{margin:0 10px;font-weight:600}
+
+    /* Button uses light background always */
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;
+      border:1px solid var(--border);background:#fff;box-shadow:var(--shadow);cursor:pointer
+    }
+
+    /* Light hero styles baked in */
+    .hero{
+      position:relative;overflow:hidden;border-radius:22px;margin:22px auto;padding:46px;background:
+        radial-gradient(1200px 400px at 20% -10%,#e7efff,transparent),
+        radial-gradient(800px 400px at 100% 10%,#e6fff6,transparent),
+        #fff;
+      box-shadow:var(--shadow); border:1px solid var(--border)
+    }
+    .hero h2{font-size:40px;margin:0 0 10px 0;line-height:1.15}
+    .hero p{margin:0 0 14px 0;color:var(--sub)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    /* Light chip */
+    .chip{padding:8px 12px;border-radius:999px;background:#f2f6ff;border:1px solid var(--border);font-weight:700}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin:26px 0}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    @media(min-width:900px){.card.span-6{grid-column:span 6}.card.span-4{grid-column:span 4}.card.span-8{grid-column:span 8}}
+    h3{margin:0 0 10px 0;font-size:20px}
+    .list{display:grid;gap:14px}
+    /* Light item */
+    .item{padding:14px;border-radius:14px;background:#f9fbff;border:1px dashed var(--border)}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(122,160,255,.15);border:1px solid rgba(122,160,255,.35);font-weight:700}
+    .pill.green{background:rgba(104,246,197,.15);border-color:rgba(104,246,197,.4)}
+    .pub>li{margin:0 0 6px 0}
+    .footer{opacity:.85;padding:30px 0;text-align:center}
+    .kbd{padding:2px 6px;border-radius:6px;border:1px solid var(--border);background:rgba(255,255,255,.05)}
+    .two-col{display:grid;gap:16px}
+    @media(min-width:820px){.two-col{grid-template-columns:1.2fr .8fr}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Adeel Farooq</h1>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#software">Software</a>
+        <a href="#pubs">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+        <!-- Keep the image button; no theme behavior -->
+        <button id="mode" class="btn" title="Profile" aria-label="Profile">
+          <img src="assets/father.png" alt="Profile" style="height:32px;width:32px;border-radius:50%;object-fit:cover;" />
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="about">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <!-- Profile Photo -->
+    <img src="assets/profile.jpg" alt="Adeel Farooq" 
+         style="width:220px;height:220px;border-radius:90%;object-fit:cover;box-shadow:0 10px 20px rgba(0,0,0,.4);" />
+    
+    <!-- About Text -->
+    <div>
+      <h2>Microbial Genomics & Bioinformatics</h2>
+      <p>Postdoctoral Researcher — University of Guelph • Microbiome • Metagenomics • Machine Learning/AI • Metabolic reconstruction</p>
+      <div class="chips">
+        <span class="chip">Microbial Genomics</span>
+        <span class="chip">Bioinformatics</span>
+        <span class="chip">Integrative Omics Analysis</span>
+        <span class="chip">Metabolic Reconstruction</span>
+        <span class="chip">Machine Learning / AI</span>
+        <span class="chip">Microbiota & Disease Modulation</span>
+        <a class="btn" href="assets/Adeel_Farooq_CV.pdf" download>📄 Download CV</a>
+        <a class="btn" href="https://scholar.google.co.kr/citations?hl=en&user=CitoAFMAAAAJ" target="_blank" rel="noopener">🔎 Google Scholar</a>
+      </div>
+    </section>
+
+    <section class="grid two-col">
+      <!-- LEFT -->
+      <article class="card">
+        <h3 id="interests">Research interests</h3>
+        <ul class="list">
+          <li class="item">Microbial defenses, metabolic potential & adaptation; microbial cross-feeding & competition</li>
+          <li class="item">HGT dynamics & plasmid-mediated resistance; One Health MDR pathogen surveillance</li>
+          <li class="item">Bioinformatics & microbial genomics workflows; omics data analysis; genome-based <strong>metabolic reconstruction</strong></li>
+          <li class="item">Microbial indicators of environmental health; discovery of novel microbes/traits for industry</li>
+        </ul>
+      </article>
+
+      <!-- RIGHT -->
+      <aside class="card">
+        <h3>At a glance</h3>
+        <div class="list">
+          <div class="item"><strong>Current:</strong> Postdoctoral Researcher (University of Guelph)</div>
+          <div class="item"><strong>Past:</strong> Postdoctoral Researcher (RIBS/JNU)</div>
+          <div class="item"><strong>Degrees:</strong> Ph.D. &amp; M.S. in Molecular Biotechnology, Jeju National University</div>
+          <div class="item"><strong>Methods:</strong> Bioinformatics, Metabolic reconstruction, Machine Learning/AI-based microbial trait mining</div>
+          <div class="item"><span class="pill green">Open to collaborations</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Teaching & Mentoring -->
+    <section class="card" id="teaching">
+      <h3>Teaching & Mentoring</h3>
+      <p>Alongside my research in microbial genomics and bioinformatics, I have been actively involved in teaching and mentoring at the University of Guelph and beyond. My experience includes guiding graduate students, mentoring junior researchers, and delivering lectures in areas such as microbial genomics, plasmid biology, bioinformatics pipelines, and computational tools for metabolic reconstruction. I emphasize reproducible research practices, collaborative learning, and hands-on training to equip students with practical and analytical skills for modern microbiology and systems biology.</p>
+      <ul class="list">
+        <li class="item"><strong>Mentorship:</strong> Supervised and trained graduate students in microbial genomics and antibiotic resistance research.</li>
+        <li class="item"><strong>Lectures & Tutorials:</strong> Delivered sessions on genomic data analysis, visualization, and computational biology methods.</li>
+        <li class="item"><strong>Workshops:</strong> Contributed to skill-based workshops on programming for life sciences, high-throughput sequencing data analysis, and network visualization.</li>
+        <li class="item"><strong>Collaborative Supervision:</strong> Supported interdisciplinary projects by mentoring students from microbiology, computational sciences, and metabolic potential profiling.</li>
+      </ul>
+    </section>
+
+    <section class="grid" id="software">
+      <article class="card span-6">
+        <h3>Selected software</h3>
+        <div class="list">
+          <div class="item"><strong>PlasmidFlow</strong> — Interactive web app for plasmid-encoded traits (Sankey, heatmaps, shared networks). <a href="https://plasmidflow.metabopotential.site/" target="_blank" rel="noopener">Live demo</a></div>
+          <div class="item"><strong>FermentoMap</strong> — Python package to detect genome-encoded metabolic traits (e.g., lactate, acetate, GABA, ethanol) from annotation files. <a href="https://pypi.org/project/fermentomap/" target="_blank" rel="noopener">PyPI</a></div>
+          <div class="item"><strong>SNVs Matcher</strong> — Web platform for SNV identification & visualization in microbial genomes. <a href="https://snv-matcher.metabopotential.site/" target="_blank" rel="noopener">Try it</a></div>
+          <div class="item"><strong>DairyBioControl</strong> — (in development) trait-scoring app to predict candidate biocontrol strains in dairy environments.</div>
+        </div>
+      </article>
+
+      <article class="card span-6">
+        <h3>Technical focus</h3>
+        <ul class="list">
+          <li class="item">Multi-omics integration, Machine Learning / AI, comparative genomics & phylogenomics</li>
+          <li class="item">Genome quality assessment; SNP genotyping & variant analysis</li>
+          <li class="item">AMR resistome & plasmidome context mapping</li>
+          <li class="item">Interactive visualization & reproducible workflows</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card" id="pubs">
+      <h3>Selected publications</h3>
+      <ol class="pub">
+        <li><strong>Global dissemination of <em>bla</em><sub>TEM-1</sub></strong> among pathogenic bacteria. <em>Science of the Total Environment</em> (2025). <a href="https://doi.org/10.1016/j.scitotenv.2025.178521" target="_blank" rel="noopener">DOI</a></li>
+        <li><strong>Adaptive traits of <em>Nitrosocosmicus</em> clade AOA</strong>. <em>mBio</em> (2024). <a href="https://doi.org/10.1128/mbio.02169-24" target="_blank" rel="noopener">DOI</a></li>
+         <li><strong>TLR13-mediated signaling protects against colon cancer</strong>. <em>International Journal of Cancer</em> (2024). <a href="https://doi.org/10.1002/ijc.35089" target="_blank" rel="noopener">DOI</a></li>      
+        <li><strong>Ecological adaptation & metabolic potential of <em>Brachybacterium equifaecis</em> sp. nov.</strong> <em>Microbiology Spectrum</em> (2023). <a href="https://doi.org/10.1128/spectrum.05048-22" target="_blank" rel="noopener">DOI</a></li>
+          <li><strong>Hybrid DNA sequencing links genotype↔phenotype in MDR bacteria</strong>. <em>Environmental Pollution</em> (2021). <a href="https://doi.org/10.1016/j.envpol.2021.117856" target="_blank" rel="noopener">DOI</a></li>
+      </ol>
+      <p style="opacity:.85">Full list available on <a href="https://scholar.google.co.kr/citations?hl=en&user=CitoAFMAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card span-8">
+        <h3>Education</h3>
+        <ul class="list">
+          <li class="item"><strong>Ph.D., Molecular Biotechnology</strong> — Jeju National University, South Korea</li>
+          <li class="item"><strong>M.S., Molecular Biotechnology</strong> — Jeju National University</li>
+        </ul>
+      </article>
+      <article class="card span-4">
+        <h3>Recent positions</h3>
+        <ul class="list">
+          <li class="item"><strong>Postdoctoral Researcher</strong>, University of Guelph (2024–present)</li>
+          
+          <li class="item"><strong>Postdoctoral Researcher</strong>, Research Institute for Basic Sciences (RIBS), JNU (2022–2023)</li>
+          
+        </ul>
+      </article>
+    </section>
+
+    <section class="card" id="contact">
+      <h3>Contact</h3>
+      <div class="list">
+        <div class="item">📍 Guelph, Ontario · Canada</div>
+        <div class="item">📧 <a href="mailto:afaroo04@uoguelph.ca">afaroo04@uoguelph.ca</a> · <a href="mailto:adeelsway@gmail.com">adeelsway@gmail.com</a></div>
+        <div class="item">🐙 GitHub: <a href="https://github.com/microbes-potential" target="_blank" rel="noopener">@adeelfarooq-bioinfo</a></div>
+        <div class="item">🔗 ORCID / other Scholar links on request</div>
+      </div>
+    </section>
+
+    <footer class="footer">© <span id="y"></span> Adeel Farooq</footer>
+  </main>
+
+  <script>
+    // Year only (theme logic removed)
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- SEO JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Adeel Farooq",
+    "jobTitle":"Postdoctoral Researcher (Microbial Genomics & Bioinformatics)",
+    "affiliation":{"@type":"Organization","name":"University of Guelph"},
+    "url":"https://adeelfarooq-bioinfo.github.io",
+    "sameAs":[
+      "https://github.com/microbes-potential",
+      "https://scholar.google.co.kr/citations?hl=en&user=CitoAFMAAAAJ"
+    ]
+  }
+  </script>
+</body>
+</html>
+
